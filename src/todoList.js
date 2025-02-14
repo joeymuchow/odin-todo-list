@@ -2,12 +2,12 @@
 class Dashboard {
     static projects = [];
 
-    addProject() {
-        // add project to projects
+    addProject(project) {
+        projects.push(project);
     }
 
-    deleteProject() {
-        // delete project from projects array
+    deleteProject(index) {
+        projects.splice(index, 1);
     }
 }
 
@@ -25,13 +25,28 @@ class Project {
         this.todoList = [];
     }
 
-    addTodo() {
-        // instantiate new todo list item
-        // add it to todo list
+    get name() {
+        return this.name;
     }
 
-    deleteToDo() {
-        // delete the to do item from todoList
+    set name(value) {
+        this.name = value;
+    }
+
+    get dueDate() {
+        return this.dueDate;
+    }
+
+    set dueDate(date) {
+        this.dueDate = date;
+    }
+
+    addTodo(todoItem) {
+        this.todoList.push(todoItem);
+    }
+
+    deleteToDo(index) {
+        this.todoList.splice(index, 1);
     }
 }
 
@@ -54,8 +69,52 @@ class TodoItem {
         this.complete = complete;
     }
 
+    get name() {
+        return this.name;
+    }
+
+    set name(value) {
+        this.name = value;
+    }
+
+    get description() {
+        return this.description;
+    }
+
+    set description(desc) {
+        this.description = desc;
+    }
+
+    get dueDate() {
+        return this.dueDate
+    }
+
+    set dueDate(date) {
+        this.dueDate = date;
+    }
+
+    get priority() {
+        return this.priority;
+    }
+
+    set priority(value) {
+        this.priority = value;
+    }
+
+    get notes() {
+        return this.notes;
+    }
+
+    set notes(value) {
+        this.notes = value;
+    }
+
+    get complete() {
+        return this.complete;
+    }
+
     updateCompleteStatus() {
-        // swap between true and false
+        this.complete = !this.complete;
     }
 }
 
